@@ -6,7 +6,7 @@ describe('Testes da aplicação Express', () => {
   it('Deve retornar a mensagem de boas-vindas', async () => {
     const res = await request(app).get('/');
     expect(res.statusCode).toEqual(200);
-    expect(res.text).toContain('Olá! minha aplicação Docker está funcionando!');
+    expect(res.text).toContain('Olá! minha aplicação Docker está funcionando professor!');
   });
 
   it('Deve retornar 404 para rota não existente', async () => {
@@ -19,7 +19,7 @@ describe('Testes da aplicação Express', () => {
     expect(port).toBe(3000);
   });
 
-  it('Deve garantir que a resposta contém a palavra Olá', async () => {
+  it('Deve garantir que a resposta tenha a palavra Olá', async () => {
     const res = await request(app).get('/');
     expect(res.text).toMatch(/Olá/);
   });
