@@ -1,0 +1,20 @@
+name: Hello World
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Say Hello
+        run: echo "Hello, Professor! This is a simple GitHub Actions workflow."
+
+      - name: Display current date and time
+        run: date
