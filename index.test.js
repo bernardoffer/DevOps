@@ -1,5 +1,6 @@
 const request = require('supertest');
-const app = require('../index');  // Aqui, você importa sua aplicação
+const app = require('./index');
+
 
 describe('Testes da aplicação Express', () => {
   it('Deve retornar a mensagem de boas-vindas', async () => {
@@ -26,5 +27,13 @@ describe('Testes da aplicação Express', () => {
   it('Deve retornar um objeto JSON vazio ao acessar uma API inexistente', async () => {
     const res = await request(app).get('/api/inexistente');
     expect(res.body).toEqual({});
+  });
+
+  describe('Testando a rota GET /', () => {
+    it('Deve retornar a mensagem Olá Professor!', async () => {
+      const res = await request(app).get('/');
+      expect(res.statusCode).toEqual(200); // Verifica se o status é 200
+      expect(res.text).toBe('Olá Professor!'); // Verifica se o corpo da resposta contém a mensagem correta
+    });
   });
 });
