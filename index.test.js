@@ -24,7 +24,7 @@ describe('Testes da aplicação Express', () => {
     expect(res.text).toMatch(/Olá/);
   });
 
-  it('Deve retornar um objeto JSON vazio ao acessar uma API inexistente', async () => {
+  it('Deve retornar um objeto JSON vazio ao acessar uma API, inexistente', async () => {
     const res = await request(app).get('/api/inexistente');
     expect(res.body).toEqual({});
   });
