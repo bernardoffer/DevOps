@@ -32,8 +32,8 @@ describe('Testes da aplicação Express', () => {
   describe('Testando a rota GET /', () => {
     it('Deve retornar a mensagem Olá Professor!', async () => {
       const res = await request(app).get('/');
-      expect(res.statusCode).toEqual(200); // Verifica se o status é 200
-      expect(res.text).toBe('Olá Professor!'); // Verifica se o corpo da resposta contém a mensagem correta
+      expect(res.statusCode).toEqual(200); 
+      expect(res.text).toBe('Olá Professor!');
     });
   });
 });
